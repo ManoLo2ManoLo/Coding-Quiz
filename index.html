@@ -1,25 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link ref="stylesheet" href="./assets/css/style.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css">
         <title>Coding Quiz</title>
     </head>
 
     <body>
-        <button id="start" class="btn">Start Quiz</button>
+        <nav>
+            <button id="highScore">View Highscores</button>
+            <h3>Time: <span id="time">0</span></h3>
+        </nav>
 
-        <div id="quiz" style="display: none">
-            <div id="question"></div>
-            <div id="multipleChoice">
-                <button id="A"></button>
-                <button id="B"></button>
-                <button id="C"></button>
-                <button id="D"></button>
+        <header id="introduction">
+            <h1>Coding Quiz Challenge</h1>
+            <p>
+                Try to answer the following code-related questions within the time limit.
+                Keep in mind that incorrect answers will penalize your scoretime by ten seconds!
+            </p>
+            <button id="start" class="btn startBtn">Start Quiz</button>
+        </header>
+
+        <section id="quiz" style="display: none">
+            <div class="question">
+                <p id="question"></p>
             </div>
-        </div>
+            <div id="multipleChoice">
+                <button class="choices" data-number="1"></button>
+                <button class="choices" data-number="2"></button>
+                <button class="choices" data-number="3"></button>
+                <button class="choices" data-number="4"></button>
+            </div>
+        </section>
+
+        <article id="hsPage" style="display: none">
+            <div>
+                <h1>HighScores</h1>
+            </div>
+
+            <div>
+            </div>
+
+            <div class="buttons">
+                <button id="home">Go Back</button>
+                <button>Clear Highscores</button>
+            </div>
+        </article>
         <script src="./assets/js/script.js"></script>
     </body>
 </html>

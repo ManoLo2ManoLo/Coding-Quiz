@@ -1,0 +1,136 @@
+:root {
+    --yellow: #ef9d1f;
+    --blue: #3b4d61;
+    --gray: #6b7b8c;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--gray);
+}
+
+/* Navigation/ Timer Bar Styling Start */
+nav {
+    background-color: var(--blue);
+    font-size: x-large;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 30px 3% 30px 3%;
+}
+
+nav button {
+    background-color: var(--blue);
+    font-size: x-large;
+    border: none;
+}
+
+nav button:hover {
+    color: var(--gray);
+    cursor: pointer;
+}
+/* Navigation/ Timer Bar Styling Ends */
+
+/* Introduction Header Styling Start */
+header {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 40px;
+    border-bottom: white solid 5px;
+}
+
+header p {
+    margin-top: 30px;
+    width: 50%;
+    text-align: center;
+    font-size: 25px
+}
+
+header button {
+    background-color: var(--blue);
+    margin-top: 30px;
+    border: none;
+    font-size: 25px;
+    padding: 20px 50px;
+    border-radius: 12px;
+}
+
+header button:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+
+/* Introduction Header Styling Ends */
+
+/* Question Section Styling Starts */
+.question {
+    margin-top: 50px;
+    font-size: 35px
+}
+
+section div {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+section button {
+    background-color: var(--blue);
+    margin-top: 30px;
+    border: none;
+    font-size: 25px;
+    padding: 20px 0px;
+    border-radius: 12px;
+    width: 30%;
+}
+
+section button:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+/* Question Section Styling Ends */
+
+/* Highscore Article Styling Starts */
+article div{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    align-content: center;
+}
+article h1 {
+    font-size: 40px;
+    border-bottom: white solid 5px;
+}
+
+article button {
+    background-color: var(--blue);
+    margin-top: 30px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 12px;
+}
+
+article button:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+/* HighScore Article Styling Starts */

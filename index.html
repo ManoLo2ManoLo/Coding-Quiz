@@ -44,12 +44,12 @@
                 <h1>HighScores</h1>
             </div>
 
-            <div>
+            <div id="hsOutput" class="hsOutput">
             </div>
 
             <div class="buttons">
                 <button id="home">Go Back</button>
-                <button>Clear Highscores</button>
+                <button id="clrBtn">Clear Highscores</button>
             </div>
         </article>
 
@@ -57,8 +57,8 @@
             <h1>All done!</h1>
             <p> Your final score is <span id="finalScore">0</span>.</p>
             <div class="form-group">
-                <input type="text" name="task-name" placeholder="Enter your Initials" />
-                <button>Submit</button>
+                <input type="text" name="name" id="nameEl" placeholder="Enter your Initials" />
+                <button id="submitBtn">Submit</button>
             </div>
         </footer>
         <script src="./assets/js/script.js"></script>

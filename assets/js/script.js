@@ -11,6 +11,10 @@ const quiz = document.getElementById("quiz");
 const scoreEl = document.getElementById("score");
 const submitEl = document.getElementById("submissionPage");
 const finalScore = document.getElementById("finalScore");
+const submitBtn = document.getElementById("submitBtn");
+const nameEl = document.getElementById("nameEl");
+const hsOutput = document.getElementById("hsOutput");
+const clrBtn = document.getElementById("clrBtn")
 
 // Some Variable
 let questionCounter = 0;
@@ -20,6 +24,7 @@ let acceptingAnswers = true;
 const max_questions = 5;
 let score;
 let timeLeft;
+let userInfo = [];
 
 // Question and Answer List
 let questions = [
@@ -65,7 +70,6 @@ function homePage() {
     hsPage.style.display = "none";
     timerEl.style.display = "none";
     submitEl.style.display = "none";
-    timeLeft = 0;
 }
 
 // Order of the Functions
@@ -81,6 +85,11 @@ function startQuiz() {
 };
 
 function submissionScreen() {
+    for(let j=0; j < localStorage.length; j++) {
+        const key = localStorage.key(j)
+        const value = localStorage.getItem(key)
+        hsOutput.innerHTML += `${key}: ${value} <br>`;
+    }
     finalScore.innerText = score;
     intro.style.display = "none";
     quiz.style.display = "none";
@@ -153,12 +162,35 @@ function timer() {
             timerEl.innerText = "Time: " + timeLeft;
             timeLeft--
         } else {
+            clearInterval(timeInterval);
             submissionScreen();
         }
     }, 1000);
 }
 
+submitBtn.onclick = function() {
+    const name = nameEl.value;
+    const fscore = finalScore.textContent;
+    location.reload;
+    if (name) {
+        localStorage.setItem(name, fscore);
+    }
+    homePage();
+}
+
+clrBtn.onclick = function() {
+    localStorage.clear()
+    homePage()
+    intro.style.display = "none";
+    quiz.style.display = "none";
+    hsPage.style.display = "block";
+    timerEl.style.display = "none";
+    submitEl.style.display = "none";
+}
+
+
+
 // Add event listener to generate button
 startBtn.addEventListener("click", startQuiz);
-highScore.addEventListener("click", highscoreScreen)
-home.addEventListener("click", homePage)
+highScore.addEventListener("click", highscoreScreen);
+home.addEventListener("click", homePage);

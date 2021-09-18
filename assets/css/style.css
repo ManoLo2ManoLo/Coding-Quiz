@@ -103,6 +103,11 @@ section button:hover {
     background-color: var(--yellow);
     cursor: pointer;
 }
+
+section div p {
+    margin-top: 30px;
+    font-size: 20px;
+}
 /* Question Section Styling Ends */
 
 /* Highscore Article Styling Starts */
@@ -134,3 +139,42 @@ article button:hover {
     cursor: pointer;
 }
 /* HighScore Article Styling Starts */
+
+/* Submit Highscorescreen Styling Starts */
+footer {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 50px;
+}
+
+footer h1 {
+    font-size: 50px;
+}
+
+footer p {
+    font-size: 35px;
+}
+
+footer div {
+    margin-top: 25px;
+}
+
+footer div input {
+    color: var(--blue);
+    font-size:20px;
+}
+
+footer div button {
+    background-color: var(--blue);
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+footer div button:hover {
+    cursor: pointer;
+    background-color: var(--yellow);
+}
+/* Submit Highscorescreen Styling Ends */

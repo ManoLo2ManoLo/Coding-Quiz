@@ -7,6 +7,10 @@ const hsPage = document.getElementById("hsPage");
 const timerEl = document.getElementById("time")
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choices"));
+const quiz = document.getElementById("quiz");
+const scoreEl = document.getElementById("score");
+const submitEl = document.getElementById("submissionPage");
+const finalScore = document.getElementById("finalScore");
 
 // Some Variable
 let questionCounter = 0;
@@ -14,6 +18,8 @@ let currentQuestion = {};
 let availableQuestions = [];
 let acceptingAnswers = true;
 const max_questions = 5;
+let score;
+let timeLeft;
 
 // Question and Answer List
 let questions = [
@@ -57,27 +63,46 @@ function homePage() {
     intro.style.display = "flex"
     quiz.style.display = "none";
     hsPage.style.display = "none";
+    timerEl.style.display = "none";
+    submitEl.style.display = "none";
+    timeLeft = 0;
 }
 
 // Order of the Functions
 function startQuiz() {
     questionCounter = 0;
+    score = 0;
     intro.style.display = "none";
     availableQuestions = [... questions];
     askQuestion();
     quiz.style.display = "block";
+    timerEl.style.display = "block";
     timer();
 };
+
+function submissionScreen() {
+    finalScore.innerText = score;
+    intro.style.display = "none";
+    quiz.style.display = "none";
+    hsPage.style.display = "none";
+    timerEl.style.display = "none";
+    submitEl.style.display = "flex";
+}
 
 // High Score Screen Function
 function highscoreScreen() {
     intro.style.display = "none";
     quiz.style.display = "none";
-    hsPage.style.display = "flex";
+    hsPage.style.display = "block";
+    timerEl.style.display = "none";
+    submitEl.style.display = "none";
 }
 
 // Ask User The question
 var askQuestion = function(){
+    if (questionCounter > 4) {
+        submissionScreen();
+    }
     questionCounter++;
     const questionIndex = questionInOrder();
     currentQuestion = availableQuestions[questionIndex];
@@ -89,15 +114,26 @@ var askQuestion = function(){
     });
     availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
+    scoreEl.innerText = score;
 };
+
+function setCounterText() {
+    scoreEl.textContent = score;
+}
 
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
-
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-
+        var correctAnswer = (questions[questionCounter - 1].answer);
+        if ((selectedAnswer === '1' && correctAnswer === 1) || (selectedAnswer === '2' && correctAnswer === 2)
+         || (selectedAnswer === '3' && correctAnswer === 3) || (selectedAnswer === '4' && correctAnswer === 4)) {
+            score++;
+            setCounterText();
+        } else {
+            timeLeft = timeLeft - 10;
+        }
         askQuestion();
     });
 });
@@ -105,24 +141,19 @@ choices.forEach(choice => {
 // Question in Order Function
 var questionInOrder = function() {
     for (i = 0; i < 5; i++) {
-        if (i > 3) {
-            highscorePage();
-        } else {
-            return i;
-        }
+        return i;
     }
 }
 
 // Function for a timer
 function timer() {
-    var timeLeft = 60;
-
+    timeLeft = 60;
     var timeInterval = setInterval(function() {
         if (timeLeft >= 0) { 
-            timerEl.innerText = timeLeft;
+            timerEl.innerText = "Time: " + timeLeft;
             timeLeft--
         } else {
-            clearInterval(timeInterval);
+            submissionScreen();
         }
     }, 1000);
 }
@@ -131,4 +162,3 @@ function timer() {
 startBtn.addEventListener("click", startQuiz);
 highScore.addEventListener("click", highscoreScreen)
 home.addEventListener("click", homePage)
-

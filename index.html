@@ -11,7 +11,7 @@
     <body>
         <nav>
             <button id="highScore">View Highscores</button>
-            <h3>Time: <span id="time">0</span></h3>
+            <h3 id="time"></span></h3>
         </nav>
 
         <header id="introduction">
@@ -33,6 +33,10 @@
                 <button class="choices" data-number="3"></button>
                 <button class="choices" data-number="4"></button>
             </div>
+
+            <div>
+                <p>Score: <span id="score"></span></p>
+            </div>
         </section>
 
         <article id="hsPage" style="display: none">
@@ -48,6 +52,15 @@
                 <button>Clear Highscores</button>
             </div>
         </article>
+
+        <footer id="submissionPage" style="display: none">
+            <h1>All done!</h1>
+            <p> Your final score is <span id="finalScore">0</span>.</p>
+            <div class="form-group">
+                <input type="text" name="task-name" placeholder="Enter your Initials" />
+                <button>Submit</button>
+            </div>
+        </footer>
         <script src="./assets/js/script.js"></script>
     </body>
 </html>

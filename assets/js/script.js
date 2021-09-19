@@ -1,20 +1,24 @@
-// Get references to the #start element
+// Button Elements
 const startBtn = document.getElementById("start");
+const clrBtn = document.getElementById("clrBtn");
+const submitBtn = document.getElementById("submitBtn");
 const home = document.getElementById("home");
+
+// Screen Change Elements
 const intro = document.getElementById("introduction");
-const highScore = document.getElementById("highScore");
+const quiz = document.getElementById("quiz");
 const hsPage = document.getElementById("hsPage");
+const submitEl = document.getElementById("submissionPage");
+
+// Text Replacement to HTML Elements
+const highScore = document.getElementById("highScore");
 const timerEl = document.getElementById("time")
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choices"));
-const quiz = document.getElementById("quiz");
 const scoreEl = document.getElementById("score");
-const submitEl = document.getElementById("submissionPage");
 const finalScore = document.getElementById("finalScore");
-const submitBtn = document.getElementById("submitBtn");
 const nameEl = document.getElementById("nameEl");
 const hsOutput = document.getElementById("hsOutput");
-const clrBtn = document.getElementById("clrBtn")
 
 // Some Variable
 let questionCounter = 0;
@@ -64,6 +68,7 @@ let questions = [
         answer: 2 }
 ];
 
+// Function for the homepage
 function homePage() {
     intro.style.display = "flex"
     quiz.style.display = "none";
@@ -84,12 +89,8 @@ function startQuiz() {
     timer();
 };
 
+// Function for submit screen footer
 function submissionScreen() {
-    for(let j=0; j < localStorage.length; j++) {
-        const key = localStorage.key(j)
-        const value = localStorage.getItem(key)
-        hsOutput.innerHTML += `${key}: ${value} <br>`;
-    }
     finalScore.innerText = score;
     intro.style.display = "none";
     quiz.style.display = "none";
@@ -100,6 +101,11 @@ function submissionScreen() {
 
 // High Score Screen Function
 function highscoreScreen() {
+    for(let j=0; j < localStorage.length; j++) {
+        const key = localStorage.key(j)
+        const value = localStorage.getItem(key)
+        hsOutput.innerHTML += `${key}: ${value} <br>`;
+    }
     intro.style.display = "none";
     quiz.style.display = "none";
     hsPage.style.display = "block";
@@ -110,6 +116,7 @@ function highscoreScreen() {
 // Ask User The question
 var askQuestion = function(){
     if (questionCounter > 4) {
+        clearInterval(timeInterval);
         submissionScreen();
     }
     questionCounter++;
@@ -130,6 +137,9 @@ function setCounterText() {
     scoreEl.textContent = score;
 }
 
+// Function that will verify the user's answer
+// Increases score if they are correct
+// Decreases time if they are incorrect
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
         acceptingAnswers = false;
@@ -154,13 +164,14 @@ var questionInOrder = function() {
     }
 }
 
-// Function for a timer
+// Function that will keep track of time
 function timer() {
     timeLeft = 60;
-    var timeInterval = setInterval(function() {
+    timeInterval = setInterval(function() {
         if (timeLeft >= 0) { 
             timerEl.innerText = "Time: " + timeLeft;
             timeLeft--
+            console.log(timeLeft);
         } else {
             clearInterval(timeInterval);
             submissionScreen();
@@ -168,27 +179,21 @@ function timer() {
     }, 1000);
 }
 
+// Function if the user submits information to highscore
 submitBtn.onclick = function() {
     const name = nameEl.value;
     const fscore = finalScore.textContent;
-    location.reload;
     if (name) {
         localStorage.setItem(name, fscore);
+        highscoreScreen();
     }
-    homePage();
 }
 
+//Function if the user chooses to clear highscore list
 clrBtn.onclick = function() {
-    localStorage.clear()
-    homePage()
-    intro.style.display = "none";
-    quiz.style.display = "none";
-    hsPage.style.display = "block";
-    timerEl.style.display = "none";
-    submitEl.style.display = "none";
+    localStorage.clear();
+    location.reload();
 }
-
-
 
 // Add event listener to generate button
 startBtn.addEventListener("click", startQuiz);

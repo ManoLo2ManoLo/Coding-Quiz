@@ -9,11 +9,14 @@
     </head>
 
     <body>
+        <!-- Start of the Navigation Bar -->
         <nav>
             <button id="highScore">View Highscores</button>
             <h3 id="time"></span></h3>
         </nav>
+        <!-- End of the Navigation Bar -->
 
+        <!-- Start of Introduction -->
         <header id="introduction">
             <h1>Coding Quiz Challenge</h1>
             <p>
@@ -22,7 +25,9 @@
             </p>
             <button id="start" class="btn startBtn">Start Quiz</button>
         </header>
+        <!--End of Introduction -->
 
+        <!-- Start of Section where Question will be displayed -->
         <section id="quiz" style="display: none">
             <div class="question">
                 <p id="question"></p>
@@ -38,13 +43,16 @@
                 <p>Score: <span id="score"></span></p>
             </div>
         </section>
+        <!-- End of Section where Question will be displayed -->
 
+        <!-- Start of Section where Highscores will be displayed -->
         <article id="hsPage" style="display: none">
             <div>
                 <h1>HighScores</h1>
             </div>
 
-            <div id="hsOutput" class="hsOutput">
+            <div>
+                <h2 id="hsOutput" class="hsOutput"></h2>
             </div>
 
             <div class="buttons">
@@ -52,7 +60,9 @@
                 <button id="clrBtn">Clear Highscores</button>
             </div>
         </article>
+        <!-- End of Section where Highscores will be displayed -->
 
+        <!-- Start of footer where user can input info for highscore -->
         <footer id="submissionPage" style="display: none">
             <h1>All done!</h1>
             <p> Your final score is <span id="finalScore">0</span>.</p>
@@ -61,6 +71,7 @@
                 <button id="submitBtn">Submit</button>
             </div>
         </footer>
+        <!-- End of footer where user can input info for highscore -->
         <script src="./assets/js/script.js"></script>
     </body>
 </html>

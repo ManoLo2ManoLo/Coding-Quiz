@@ -1,7 +1,7 @@
 # Coding-Quiz
 
 # LINKS SECTION
-Link to GitHub Repository: https://github.com/ManoLo2ManoLo/Coding-Quiz.git
+Link to GitHub Repository: https://github.com/ManoLo2ManoLo/Coding-Quiz.git <br />
 Link to Application: https://manolo2manolo.github.io/Coding-Quiz/
 
 # PURPOSE OF APPLICATION
@@ -20,12 +20,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 This code was typed and revised by Manuel Canas-Menendez.
 
 # NECESSARY FILES
-index.html (the structure of the webpage)
-    assets folder
-        css folder 
-            style.css (the styling of the webpage)
-        js folder
-            script.js (the functionality of the webpage)
+index.html (the structure of the webpage) <br />
+-assets folder <br />
+--css folder <br />
+---style.css (the styling of the webpage) <br />
+--js folder <br />
+---script.js (the functionality of the webpage)
 
 # SCREENSHOTS
 

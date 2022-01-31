@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS quiz_game_db;
-CREATE DATABASE quiz_game_db;

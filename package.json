@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/ManoLo2ManoLo/Coding-Quiz/issues"
   },
-  "homepage": "https://github.com/ManoLo2ManoLo/Coding-Quiz#readme"
+  "homepage": "https://github.com/ManoLo2ManoLo/Coding-Quiz#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
 }

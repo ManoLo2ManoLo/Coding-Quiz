@@ -11,6 +11,7 @@ const typeDefs = gql`
     type Score {
         score: Int,
         username: String
+        createdAt: String
     }
 
     type Question {

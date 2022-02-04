@@ -15,3 +15,11 @@ export const ADD_USER = gql`
         }
     }
 `
+
+export const ADD_SERVICE = gql`
+    mutation addScore($score: Int!) {
+        addScore(score: $score) {
+            _id
+        }
+    }
+`

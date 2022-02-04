@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const scoreSchema = new Schema(
     {
@@ -11,7 +12,13 @@ const scoreSchema = new Schema(
         username: {
             type: String,
             required: true,
-        }   
+        },
+        
+        createdAt: {
+            type: Date,
+            default: Date.now,
+            get: createdAtVal => dateFormat(createdAtVal)
+        }
     }
 )
 

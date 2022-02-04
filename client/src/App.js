@@ -11,7 +11,8 @@ import { setContext } from '@apollo/client/link/context';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
+import Highscore from './pages/Highscore';
 
 import Nav from './components/Nav';
 
@@ -45,7 +46,9 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/profile/:username?" component={Profile} />
+            <Route exact path="/highscore" component={Highscore} />
           </Switch>
         </div>
       </Router>

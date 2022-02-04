@@ -8,7 +8,7 @@ function Nav() {
             return (
                 <ul className="tabs tabs-transparent">
                     <li className="tab right"><a href="/" onClick={() => Auth.logout()}>Logout</a></li>
-                    <li className="tab right"><a href="/dashboard">Dashboard</a></li>
+                    <li className="tab right"><a href="/profile">My Scores</a></li>
                     <li className="tab right"><a href="/highscore">View Highscores</a></li>
                 </ul>
             )

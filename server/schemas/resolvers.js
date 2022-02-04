@@ -16,8 +16,19 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
 
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+                .select('-__v -password')
+                .populate('scores')
+        },
+
         scores: async () => {
-            return Score.find()
+            const score = await Score.find()
+                .limit(10)
+
+            score.sort((a,b) => b.score - a.score)
+
+            return score;
         },
 
         questions: async () => {
@@ -33,8 +44,8 @@ const resolvers = {
             return { token, user };
         },
 
-        login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
+        login: async (parent, { username, password }) => {
+            const user = await User.findOne({ username });
 
             if (!user) {
                 throw new AuthenticationError('Incorrect credentials');

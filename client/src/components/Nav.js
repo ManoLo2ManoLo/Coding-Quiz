@@ -7,16 +7,16 @@ function Nav() {
         if (Auth.loggedIn()) {
             return (
                 <ul className="tabs tabs-transparent">
-                    <li class="tab right"><a href="/logout">Logout</a></li>
-                    <li class="tab right"><a href="/dashboard">Dashboard</a></li>
+                    <li className="tab right"><a href="/" onClick={() => Auth.logout()}>Logout</a></li>
+                    <li className="tab right"><a href="/dashboard">Dashboard</a></li>
                     <li className="tab right"><a href="/highscore">View Highscores</a></li>
                 </ul>
             )
         } else {
             return (
                 <ul className="tabs tabs-transparent">
-                    <li className="tab right"><a href="/logout">Sign Up</a></li>
-                    <li className="tab right"><a href="/dashboard">Log In</a></li>
+                    <li className="tab right"><a href="/signup">Sign Up</a></li>
+                    <li className="tab right"><a href="/login">Log In</a></li>
                     <li className="tab right"><a href="/highscore">View Highscores</a></li>
                 </ul>
             )
@@ -24,12 +24,15 @@ function Nav() {
     }
 
     return (
-        <nav className="nav-extended blue-grey darken-4">
+        <nav className="nav-extended black">
             <div className="nav-content">
                 {showNavigation()}
             </div>
             <div className="nav-wrapper">
                 <a href="/" className="brand-logo center">Coding Quiz</a>
+            </div>
+            <div className="progress cyan">
+                <div className="indeterminate white"></div>
             </div>
         </nav>
     )

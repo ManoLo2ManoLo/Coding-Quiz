@@ -13,7 +13,7 @@ function Home() {
                             </p>
                         </div>
                         <div className="card-action center">
-                            <button className='btn cyan'>Start Quiz</button>
+                            <a className='btn' href="/quiz">Start Quiz</a>
                         </div>
                     </div>    
                 </div>

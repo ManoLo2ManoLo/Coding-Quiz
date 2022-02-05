@@ -31,8 +31,8 @@ function Nav() {
             <div className="nav-wrapper">
                 <a href="/" className="brand-logo center">Coding Quiz</a>
             </div>
-            <div className="progress cyan">
-                <div className="indeterminate white"></div>
+            <div className="progress">
+                <div className="indeterminate"></div>
             </div>
         </nav>
     )

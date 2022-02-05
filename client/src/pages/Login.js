@@ -59,13 +59,13 @@ function Login() {
 
                         <div className='row'>
                             <div className="input-field col s10 offset-s1 center">
-                                <button type='submit' className="btn-floating btn-large cyan pulse"><i className="fas fa-sign-in-alt"></i></button>
+                                <button type='submit' className="btn-floating btn-large teal pulse"><i className="fas fa-sign-in-alt"></i></button>
                             </div>
                         </div>
                         
                         <div className='row'>
                             <div className="card-action col s10 offset-s1">
-                                <p className='right-align white-text'>Dont have one? <a href="/signup" className='cyan-text'>Create One!</a></p>
+                                <p className='right-align white-text'>Dont have one? <a href="/signup" className='teal-text'>Create One!</a></p>
                             </div>
                         </div>
                     </form>

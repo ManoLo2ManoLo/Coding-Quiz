@@ -57,13 +57,13 @@ function Signup() {
 
                         <div className='row'>
                             <div className="input-field col s10 offset-s1 center">
-                                <button type="submit" className="btn-floating btn-large cyan pulse"><i className="fas fa-user-plus"></i></button>
+                                <button type="submit" className="btn-floating btn-large teal pulse"><i className="fas fa-user-plus"></i></button>
                             </div>
                         </div>
                         
                         <div className='row'>
                             <div className="card-action col s10 offset-s1">
-                                <p className='right-align white-text'>Have an account? <a href="/login" className='cyan-text'>Log in!</a></p>
+                                <p className='right-align white-text'>Have an account? <a href="/login" className='teal-text'>Log in!</a></p>
                             </div>
                         </div>
                     </form>

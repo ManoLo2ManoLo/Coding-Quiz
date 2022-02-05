@@ -37,29 +37,9 @@ function Profile() {
         return <Redirect to="/profile" />;
     };
 
-    function showTitle() {
-        if (!userParam) {
-            return (
-                <p className='flow-text center strong white-text'>Hello {username}</p>
-            )
-        } else {
-            return (
-                <p className='flow-text center strong white-text'>Welcome to {username}'s page!</p>
-            )
-        }
-    }
-
-    function showAverage() {
-        if (!userParam) {
-            return (
-                <p className="flow-text white-text center"> Your average score is {average}.</p>
-            )
-        } else {
-            return (
-                <p className="flow-text white-text center"> Their average score is {average}.</p>
-            )
-        }
-    }
+    function showTitle() { return userParam ? `Welcome to ${username}'s page!` : `Hello ${username}!` }
+    function showAverage() { return userParam ? `Their average score is ${average}` : `Your average score is ${average}` }
+    function showProfile() { return userParam ? 'They' : 'You' }
 
     return (
         <div className='container'>
@@ -67,8 +47,8 @@ function Profile() {
                 <div className='col s10 offset-s1'>
                     <div className="card black">
                         <div className="card-content">
-                            {showTitle()}
-                            {showAverage()}
+                            <p className='flow-text center strong white-text'>{showTitle()}</p>
+                            <p className="flow-text white-text center"> {showAverage()}</p>
                         </div>
                     </div>
                 </div>
@@ -79,8 +59,8 @@ function Profile() {
                         <li className="collection-item center flow-text white-text black">Score History:</li>
                         {scores?.map((score) => (             
                             <li className="collection-item avatar black">
-                                <i className="fas fa-angle-double-right circle white black-text"></i>
-                                <p className='title white-text'>You recieved a score of {score.score} out of 100.</p>
+                                <i className="fas fa-angle-double-right circle teal black-text"></i>
+                                <p className='title white-text'>{showProfile()} recieved a score of {score.score} out of 100.</p>
                                 <p className="white-text">On {score.createdAt}</p>
                             </li>
                         ))}

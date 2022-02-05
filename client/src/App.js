@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import Highscore from './pages/Highscore';
+import Quiz from './pages/Quiz';
 
 import Nav from './components/Nav';
 
@@ -49,6 +50,7 @@ function App() {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/profile/:username?" component={Profile} />
             <Route exact path="/highscore" component={Highscore} />
+            <Route exact path="/quiz" component={Quiz} />
           </Switch>
         </div>
       </Router>

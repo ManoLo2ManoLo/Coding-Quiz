@@ -16,7 +16,7 @@ function Highscore() {
                         {scores?.map((score) => (
                             <li className="collection-item avatar black">
                                 <i className="fas fa-angle-double-right circle white black-text"></i>
-                                <p className='title white-text'><span><a className='cyan-text' href={`/profile/${score.username}`}>{score.username}</a></span> recieved</p>
+                                <p className='title white-text'><span><a className='teal-text' href={`/profile/${score.username}`}>{score.username}</a></span> recieved</p>
                                 <p className='white-text'>a score of {score.score} out of 100.</p>
                                 <p className='white-text'>on {score.createdAt}</p>
                             </li>

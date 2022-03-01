@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Coding Quiz</title>
+</head>
+<body>
+
+    <nav className="nav-extended black">
+        <div className="nav-content">
+            {{#if loggedIn}}
+                <ul className="tabs tabs-transparent">
+                    <li className="tab right"><a href="/" onClick={() => Auth.logout()}>Logout</a></li>
+                    <li className="tab right"><a href="/profile">My Scores</a></li>
+                    <li className="tab right"><a href="/highscore">View Highscores</a></li>
+                </ul>
+            {{else}}
+                <ul className="tabs tabs-transparent">
+                    <li className="tab right"><a href="/signup">Sign Up</a></li>
+                    <li className="tab right"><a href="/login">Log In</a></li>
+                    <li className="tab right"><a href="/highscore">View Highscores</a></li>
+                </ul>
+            {{/if}}
+        </div>
+        <div className="nav-wrapper">
+            <a href="/" className="brand-logo center">Coding Quiz</a>
+        </div>
+        <div className="progress">
+            <div className="indeterminate"></div>
+        </div>
+    </nav>
+
+    {{{body}}}
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<div class='container'>
+    <div class="row">
+        <div class='col s10 offset-s1'>
+            <div class="row">
+                <p class="center flow-text white-text" id='question'>Question</p>
+            </div>
+
+            <div class='collection black row '>
+                <button 
+                    class='collection-item btn remove-border black-text width100'
+                    id="answer1"
+                    onclick="checkAnswer('1')"
+                >A</button>
+
+                <button 
+                    class='collection-item btn remove-border black-text width100'
+                    id="answer2"
+                    onclick="checkAnswer('2')"
+                >B</button>
+
+                <button 
+                    class='collection-item btn remove-border black-text width100'
+                    id="answer3"
+                    onclick="checkAnswer('3')"
+                >C</button>
+
+                <button 
+                    class='collection-item btn remove-border black-text width100'
+                    id="answer4"
+                    onclick="checkAnswer('4')"
+                >D</button>
+            </div>
+
+            <div class='black row'>
+                <p class='remove-border white-text flow-text center'>Score: <span id='scoreEl'>number</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/quiz.js"></script>

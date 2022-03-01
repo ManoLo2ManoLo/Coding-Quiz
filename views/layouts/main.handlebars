@@ -7,31 +7,32 @@
      <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
     <title>Coding Quiz</title>
 </head>
 <body>
-
-    <nav className="nav-extended black">
-        <div className="nav-content">
+    <nav class="nav-extended black">
+        <div class="nav-content">
             {{#if loggedIn}}
-                <ul className="tabs tabs-transparent">
-                    <li className="tab right"><a href="/" onClick={() => Auth.logout()}>Logout</a></li>
-                    <li className="tab right"><a href="/profile">My Scores</a></li>
-                    <li className="tab right"><a href="/highscore">View Highscores</a></li>
+                <ul class="tabs tabs-transparent">
+                    <li class="tab right"><a href="/" onClick={() => Auth.logout()}>Logout</a></li>
+                    <li class="tab right"><a href="/profile">My Scores</a></li>
+                    <li class="tab right"><a href="/highscore">View Highscores</a></li>
                 </ul>
             {{else}}
-                <ul className="tabs tabs-transparent">
-                    <li className="tab right"><a href="/signup">Sign Up</a></li>
-                    <li className="tab right"><a href="/login">Log In</a></li>
-                    <li className="tab right"><a href="/highscore">View Highscores</a></li>
+                <ul class="tabs tabs-transparent">
+                    <li class="tab right"><a href="/signup">Sign Up</a></li>
+                    <li class="tab right"><a href="/login">Log In</a></li>
+                    <li class="tab right"><a href="/highscore">View Highscores</a></li>
                 </ul>
             {{/if}}
         </div>
-        <div className="nav-wrapper">
-            <a href="/" className="brand-logo center">Coding Quiz</a>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo center">Coding Quiz</a>
         </div>
-        <div className="progress">
-            <div className="indeterminate"></div>
+        <div class="progress">
+            <div class="indeterminate"></div>
         </div>
     </nav>
 

@@ -16,7 +16,7 @@
         <div class="nav-content">
             {{#if loggedIn}}
                 <ul class="tabs tabs-transparent">
-                    <li class="tab right"><a href="/" onClick={() => Auth.logout()}>Logout</a></li>
+                    <li class="tab right"><a href="/" id="logout">Logout</a></li>
                     <li class="tab right"><a href="/profile">My Scores</a></li>
                     <li class="tab right"><a href="/highscore">View Highscores</a></li>
                 </ul>
@@ -37,7 +37,10 @@
     </nav>
 
     {{{body}}}
-    
+
+    {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+    {{/if}}
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>

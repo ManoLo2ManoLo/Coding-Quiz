@@ -1,0 +1,17 @@
+<div class='container'>
+    <div class="row">
+        <div class='col s10 offset-s1'>
+            <ul class="collection black">
+                <li class="collection-item center flow-text white-text black">Highscore:</li>
+                {{#each scores as |score|}}
+                    <li class="collection-item avatar black">
+                        <i class="fas fa-angle-double-right circle white black-text"></i>
+                        <p class='title white-text'><span><a className='teal-text' href='/profile/{{score.user_id}}'>{{score.username}}</a></span> recieved</p>
+                        <p class='white-text'>a score of {{score.score}} out of 100.</p>
+                        <p class='white-text'>on {{score.createdAt}}</p>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -19,4 +19,16 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    Score.create({
+        score: req.body.score,
+        user_id: req.body.user_id
+    })
+    .then(dbScoreData => res.json(dbScoreData))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+})
+
 module.exports = router;

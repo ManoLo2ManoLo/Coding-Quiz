@@ -1,4 +1,6 @@
 node_modules
 
+.env
+
 __OLD_WORK__
 __REACT_VERSION__

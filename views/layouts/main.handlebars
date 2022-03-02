@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -12,36 +11,47 @@
     <title>Coding Quiz</title>
 </head>
 <body>
-    <nav class="nav-extended black">
-        <div class="nav-content">
-            {{#if loggedIn}}
-                <ul class="tabs tabs-transparent">
-                    <li class="tab right"><a href="/" id="logout">Logout</a></li>
-                    <li class="tab right"><a href="/profile">My Scores</a></li>
-                    <li class="tab right"><a href="/highscore">View Highscores</a></li>
-                </ul>
-            {{else}}
-                <ul class="tabs tabs-transparent">
-                    <li class="tab right"><a href="/signup">Sign Up</a></li>
-                    <li class="tab right"><a href="/login">Log In</a></li>
-                    <li class="tab right"><a href="/highscore">View Highscores</a></li>
-                </ul>
-            {{/if}}
-        </div>
+    <nav class="black">
         <div class="nav-wrapper">
             <a href="/" class="brand-logo center">Coding Quiz</a>
-        </div>
-        <div class="progress">
-            <div class="indeterminate"></div>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                {{#if loggedIn}}
+                    <li><a href="/highscore">View Highscores</a></li>
+                    <li><a href="/profile">My Scores</a></li>
+                    <li><a href="/" id="logout">Logout</a></li>
+                {{else}}
+                    <li><a href="/highscore">View Highscores</a></li>
+                    <li><a href="/login">Log In</a></li>
+                    <li><a href="/signup">Sign Up</a></li>
+                {{/if}}
+            </ul>
         </div>
     </nav>
 
+    <div class="progress">
+            <div class="indeterminate"></div>
+    </div>
+
+    <ul class="sidenav" id="mobile-demo">
+        {{#if loggedIn}}
+            <li><a href="/highscore">View Highscores</a></li>
+            <li><a href="/profile">My Scores</a></li>
+            <li><a href="/" id="logout">Logout</a></li>
+        {{else}}
+            <li><a href="/highscore">View Highscores</a></li>
+            <li><a href="/login">Log In</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+        {{/if}}
+    </ul>
+
     {{{body}}}
 
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     {{#if loggedIn}}
         <script src="/javascript/logout.js"></script>
     {{/if}}
-    <!-- Compiled and minified JavaScript -->
+    <script src="/javascript/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

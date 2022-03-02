@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
         },
         include: {
             model: Score,
-            attributes: ['id', 'score']
+            attributes: ['id', 'score', 'createdAt'],
+            order: [['createdAt', 'DESC']]
         }
     })
     .then((dbUserData) => res.json(dbUserData))
@@ -25,7 +26,8 @@ router.get('/:id', (req, res) => {
         },
         include: {
             model: Score,
-            attributes: ['id', 'score']
+            attributes: ['id', 'score'],
+            order: [['createdAt', 'DESC']]
         }
     })
     .then((dbUserData) => {

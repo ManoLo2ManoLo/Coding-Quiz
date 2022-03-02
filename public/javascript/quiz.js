@@ -1,4 +1,8 @@
+const quizScreen = document.getElementById("quizScreen");
+const submitScreen = document.getElementById("submitScreen");
+
 const scoreEl = document.getElementById("scoreEl");
+const finalScoreEl = document.getElementById("finalScoreEl");
 const question = document.getElementById("question");
 const answer1 = document.getElementById("answer1");
 const answer2 = document.getElementById("answer2");
@@ -48,40 +52,63 @@ let questions = [
         answer2: "Terminal/Bash", 
         answer3: "For Loops",
         answer4: "Console.log",
-        correct: "3",
+        correct: "2",
     }
 ];
 
 function questionPage() {
     if (questionCounter > 5) {
-        window.location('/');
+        submitPage();
     }
-     let q = questions[currentQuestion];
-     question.innerHTML = q.question;
-     answer1.innerHTML = q.answer1;
-     answer2.innerHTML = q.answer2;
-     answer3.innerHTML = q.answer3;
-     answer4.innerHTML = q.answer4;
+
+    let q = questions[currentQuestion];
+    question.innerHTML = q.question;
+    answer1.innerHTML = q.answer1;
+    answer2.innerHTML = q.answer2;
+    answer3.innerHTML = q.answer3;
+    answer4.innerHTML = q.answer4;
 }
 
 function checkAnswer(answer){
-     if (answer === questions[currentQuestion].correct){
-          score = score + 20;
-          questionCounter++;
-          setCounterText();
-     } else {
-          questionCounter++;
-     }
+    if (answer === questions[currentQuestion].correct){
+        score = score + 20;
+        questionCounter++;
+        setCounterText();
+    } else {
+        questionCounter++;
+    }
 
-     if (currentQuestion < questionCounter) {
-          currentQuestion++;
-          questionPage();
-     }
+    if (currentQuestion < questionCounter) {
+        currentQuestion++;
+        questionPage();
+    }
 }
 
 function setCounterText() {
-     scoreEl.textContent =  score;
- }
+    scoreEl.textContent =  score;
+}
+
+function submitPage() {
+    finalScoreEl.innerHTML = score;
+    quizScreen.style.display = "none";
+    submitScreen.style.display = "block";
+}
+
+async function saveScore() {
+    const response = await fetch('/api/scores', {
+       method: 'post',
+       body: JSON.stringify({
+           score
+       }),
+       headers: { 'Content-Type': 'application/json' }
+    })
+
+    if (response.ok) {
+        document.location.replace('/')
+    } else {
+        alert(response.statusText);
+    }
+}
 
 window.addEventListener('load', (event) => {
     score = 0;

@@ -1,5 +1,5 @@
 <div class='container'>
-    <div class="row">
+    <div class="row" id="quizScreen">
         <div class='col s10 offset-s1'>
             <div class="row">
                 <p class="center flow-text white-text" id='question'>Question</p>
@@ -34,6 +34,26 @@
             <div class='black row'>
                 <p class='remove-border white-text flow-text center'>Score: <span id='scoreEl'>number</span></p>
             </div>
+        </div>
+    </div>
+
+    <div class="row" id="submitScreen" style="display:none">
+        <div class="col s10 offset-s1">
+            <div class="card black">
+                <div class="card-content">
+                    <p class='flow-text center strong white-text'>Well Done!</p>
+                    <p class="flow-text white-text center">Your final score is: <span id="finalScoreEl"></span> out of 100.</p>
+                </div>
+                <div class="card-action center">
+                    {{#if loggedIn}}
+                        <a class='btn' onClick="saveScore()">Save Score!</a>
+                        <a class='btn' href="/">Go home</a>
+                    {{else}}
+                        <p class="flow-text white-text center">Please login into an account to save future score.</p>
+                        <a class='btn' href="/">Go home</a>
+                    {{/if}}
+                </div>
+            </div>    
         </div>
     </div>
 </div>

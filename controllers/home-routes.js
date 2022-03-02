@@ -22,7 +22,8 @@ router.get('/profile', withAuth, (req, res) => {
         },
         include: {
             model: Score,
-            attributes: ['id', 'score', 'createdAt']
+            order: [['createdAt', 'DESC']],
+            attributes: ['id', 'score', 'createdAt'],
         }
     })
     .then((dbUserData) => {
@@ -64,7 +65,8 @@ router.get('/profile/:user_id', withAuth, (req, res) => {
         },
         include: {
             model: Score,
-            attributes: ['id', 'score', 'createdAt']
+            attributes: ['id', 'score', 'createdAt'],
+            order: [['createdAt', 'DESC']]
         },
         where: {
             id: req.params.user_id

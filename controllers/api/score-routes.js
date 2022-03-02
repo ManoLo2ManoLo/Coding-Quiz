@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     Score.create({
         score: req.body.score,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbScoreData => res.json(dbScoreData))
     .catch((err) => {

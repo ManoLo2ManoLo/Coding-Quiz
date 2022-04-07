@@ -28,7 +28,7 @@ command 'npm i' command in your terminal at the root directory level to install 
 * Ensure you have Node.js installed on your machine. The budget tracker application will be invoked by entering node server.js in the command line.
 
 ## Start Application
-* You will see the App running on port 3000! in the console. You can then view the app on http://localhost:3000/.
+* You will see the App running on port 3001! in the console. You can then view the app on http://localhost:3001/.
 
 ## Screenshot(s)
 ![Screenshot (560)](https://user-images.githubusercontent.com/88364269/162162314-99d24a5d-0c30-4e84-85f4-82f15e4029ba.png)

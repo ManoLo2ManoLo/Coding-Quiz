@@ -10,8 +10,38 @@
 ## Link(s)
 Link to Application: https://manolo-coding-quiz.herokuapp.com/
 
-## Description
-This application is coding quiz, which consist a series of 5 question. The user recieve 20 points, with a user able to score upto 100 points. After the user finish the quiz, their score they are able to save the score if they are logged into an account. If the user is not logged in, they are able to log in, sign up, view highscores, and take the quiz. If the user decides to sign up or log in, they are able to view their pass saved score, view other peoples saved score history, as well as take the quiz. 
+## Table of Contents
+-[Features](#features)
+-[User Story](#user-story)
+-[Clone Repository](#clone-repository)
+-[Install Dependencies](#install-dependencies)
+-[Start Application](#start-application)
+-[Screenshots](#screenshots)
+-[Credit](#credit)
+-[License](#license)
+
+## Features
+1. User can create an account or login.
+2. User can take the quiz (regardless they are logged in or not).
+3. At the end of the quiz, user can save score if they are logged in.
+4. User can view past saved scores, other's past saved socres, and highscores.
+
+## User Story
+As a user looking for quick enjoyment, I would like an application that will allow me to quickly take a coding quiz. Where you can create an account to keep track of past saved scores and check out others’ scores.
+
+## Clone Repository
+* git clone https://github.com/ManoLo2ManoLo/Coding-Quiz.git
+
+## Install Dependencies
+* All NPM packages required for this application (bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize) are already listed as dependencies in the package.json file. Run the
+command 'npm i' command in your terminal at the root directory level to install the packages.
+* Ensure you have Node.js installed on your machine. The budget tracker application will be invoked by entering node server.js in the command line.
+
+## Start Application
+* You will see the App running on port 3000! in the console. You can then view the app on http://localhost:3000/.
+
+## Screenshots
+![Screenshot (560)](https://user-images.githubusercontent.com/88364269/162162314-99d24a5d-0c30-4e84-85f4-82f15e4029ba.png)
 
 ## Credit
 This application was typed and revised Manuel Canas-Menendez (ManoLo2ManoLo). <br />

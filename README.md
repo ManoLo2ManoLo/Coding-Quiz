@@ -10,16 +10,6 @@
 ## Link(s)
 Link to Application: https://manolo-coding-quiz.herokuapp.com/
 
-## Table of Contents
-* [Features](#features)
-* [User Story](#user-story)
-* [Clone Repository](#clone-repository)
-* [Install Dependencies](#install-dependencies)
-* [Start Application](#start-application)
-* [Screenshot(s)](#screenshots)
-* [Credit](#credit)
-* [License](#license)
-
 ## Features
 1. User can create an account or login.
 2. User can take the quiz (regardless they are logged in or not).

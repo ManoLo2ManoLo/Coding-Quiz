@@ -11,14 +11,14 @@
 Link to Application: https://manolo-coding-quiz.herokuapp.com/
 
 ## Table of Contents
--[Features](#features)
--[User Story](#user-story)
--[Clone Repository](#clone-repository)
--[Install Dependencies](#install-dependencies)
--[Start Application](#start-application)
--[Screenshots](#screenshots)
--[Credit](#credit)
--[License](#license)
+* [Features](#features)
+* [User Story](#user-story)
+* [Clone Repository](#clone-repository)
+* [Install Dependencies](#install-dependencies)
+* [Start Application](#start-application)
+* [Screenshot(s)](#screenshots)
+* [Credit](#credit)
+* [License](#license)
 
 ## Features
 1. User can create an account or login.
@@ -40,7 +40,7 @@ command 'npm i' command in your terminal at the root directory level to install 
 ## Start Application
 * You will see the App running on port 3000! in the console. You can then view the app on http://localhost:3000/.
 
-## Screenshots
+## Screenshot(s)
 ![Screenshot (560)](https://user-images.githubusercontent.com/88364269/162162314-99d24a5d-0c30-4e84-85f4-82f15e4029ba.png)
 
 ## Credit
